@@ -1,7 +1,6 @@
 .logo{
   margin: 20px;
   font-weight: 800;
-
 }
 
 ul{
@@ -25,4 +24,43 @@ li{
 
 img{
   margin: 10px;
+}
+
+@media (min-width: 50em){
+
+  ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;;
+    text-align: center;
+  }
+
+  .logo{
+    order: 3;
+  }
+
+  .typography{
+    order: 1;
+  }
+
+  .ui{
+    order: 2;
+  }
+
+  .branding{
+    order: 4;
+  }
+
+  .graffiti{
+    order: 5;
+  }
+
+  #photos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
 }
