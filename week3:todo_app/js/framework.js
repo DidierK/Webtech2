@@ -21,13 +21,25 @@ var WrapperElement = function(element)
 WrapperElement.prototype.toggleClass = function(className)
 {
 	if(this.isArray){
-	      for( var i=0; i<this.element.length; i++){
-	        this.element[i].className = " prior-high" + className;
-	      }
-	    }
-	    else{
-	      this.element[i].className = " prior-high" + className;
-	    }
+	  for( var i=0; i<this.element.length; i++){
+      if(this.element[i].className.indexOf(className) == -1 ){
+        this.element[i].className = this.element[i].className + " " + className;
+            }
+          else
+          {
+          this.element[i].className = this.element[i].className.substring(0, this.element[i].className.length - (className.length + 1));
+          }
+    		}
+	}
+	else
+	{
+		if(this.element.className.indexOf(className) == -1 ){
+            this.element.className = this.element.className + " " + className;
+        } else{
+            this.element.className = this.element.className.substring(0, this.element.className.length - (className.length + 1));
+        }
+	}
+	return this;
 }
 
 WrapperElement.prototype.addClass = function(className)

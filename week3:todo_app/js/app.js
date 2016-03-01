@@ -1,13 +1,7 @@
 /* ---------------------------------------------------- APP ---------------------------------- */
-$(".prior-high").click(function(){ 								// make sure we can click on an element
-  console.log("you can click");
-  if($(this).className == "done"){
-    $(this).toggleClass("prior-high");
-  }
-  else{
-    $(this).addClass("done");
-  }
-    						// when we click on any list item, add the class done if it doesn't exist yet on the element or remove it when it exists
+$("li").click(function(){ 								// make sure we can click on an element
+    console.log("you can click")
+    $(this).toggleClass("done"); 						// when we click on any list item, add the class done if it doesn't exist yet on the element or remove it when it exists
 });
 
 /*$("#add-item-text").keyup(function(e){ 					// make sure we can detect a keyup event
