@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <ul>
+      <li id="todo1">LIST 1</li>
+      <li id="todo2">LIST 2</li>
+    </ul>
+
+    <script src="framework.js"></script>
+    <script>
+
+      /*function markAsDone(el, completed){
+          document.getElementById(el).style.textDecoration = "line-through";
+          if( completed ){
+              document.getElementById(el).style.color = "red";
+          }
+      }
+
+      markAsDone("todo1", true);
+      markAsDone("todo2", false);
+        */
+
+        $("li").css("color","red").on("click", function(){
+          alert("clicked");
+        });
+
+    </script>
+
+</body>
+</html>
