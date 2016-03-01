@@ -3,10 +3,10 @@ var WrapperElement = function(element)
 {
     // a wrapper element allow us to extend html dom functionality
     // without changing the behaviour of built-in elements
-	
+
     // this contains the actual selection
-    this.element = element;									
-    
+    this.element = element;
+
     // this allows us to see if a selection contains one or more elements
     if(element.length > 1)
     {
@@ -20,7 +20,14 @@ var WrapperElement = function(element)
 
 WrapperElement.prototype.toggleClass = function(className)
 {
-    
+	if(this.isArray){
+	      for( var i=0; i<this.element.length; i++){
+	        this.element[i].className = " prior-high" + className;
+	      }
+	    }
+	    else{
+	      this.element[i].className = " prior-high" + className;
+	    }
 }
 
 WrapperElement.prototype.addClass = function(className)
@@ -30,7 +37,7 @@ WrapperElement.prototype.addClass = function(className)
         // multiple elements, we'll need to loop
 		for(var i = 0; i<this.element.length; i++)
 		{
-			this.element[i].className += " " + className;
+			this.element[i].className += " done" + className;
 		}
 	}
 	else
@@ -66,12 +73,19 @@ WrapperElement.prototype.keyup = function(action){
 
 WrapperElement.prototype.click = function(action)
 {
-
+	if(this.isArray){
+	      for( var i=0; i<this.element.length; i++){
+	        this.element[i].addEventListener('click', action);
+	      }
+	    }
+	    else{
+	      this.element[0].addEventListener('click', action);
+	    }
 }
 
 WrapperElement.prototype.val = function(value)
 {
-	
+
 }
 
 var $ = function(selector)
