@@ -78,9 +78,9 @@ WrapperElement.prototype.keyup = function(action){
 	else
 	{
 		// just one element, let's go nuts
-		this.element.addEventListener('keyup', action);
+		this.element[0].addEventListener('keyup', action);
 	}
-	return this;
+
 }
 
 WrapperElement.prototype.click = function(action)
