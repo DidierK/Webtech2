@@ -5,9 +5,10 @@ $("li").click(function(){ 								// make sure we can click on an element
 });
 
 $("#add-item-text").keyup(function(e){
-  console.log("keyup!");					// make sure we can detect a keyup event
-	/*if(e.which === 13)
+  					// make sure we can detect a keyup event
+	if(e.which === 13)
 	{
+    console.log("enter!");
 		// this is the ENTER key with code 13
 		var todoText = $(this).val();
 		var li = document.createElement("li");			// create a new list item in memory
@@ -20,5 +21,5 @@ $("#add-item-text").keyup(function(e){
 		$(li).click(function(){							// make sure that we can click on the newly created list item
 			$(this).toggleClass("done"); 				// toggle the class done when clicking on the element
 		});
-	}*/
+	}
 });

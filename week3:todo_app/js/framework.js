@@ -63,7 +63,8 @@ WrapperElement.prototype.addClass = function(className)
 
 WrapperElement.prototype.prepend = function(item)
 {
-
+  var firstitem = this.element.firstChild;
+  this.element.insertBefore(item, firstitem);
 }
 
 WrapperElement.prototype.keyup = function(action){
@@ -97,7 +98,12 @@ WrapperElement.prototype.click = function(action)
 
 WrapperElement.prototype.val = function(value)
 {
+  if(value){
+        this.element.value = value;
 
+    } else{
+        return this.element.value;
+    }
 }
 
 var $ = function(selector)
