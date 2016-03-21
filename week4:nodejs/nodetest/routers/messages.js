@@ -1,16 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var controller = require('./../controllers/message')
 
-router.get('/', function(req, res){
-  res.send("get messages");
-});
-
-router.get('/:id', function(req, res){
-  res.send("get messages with id " + req.params.id);
-});
-
-router.post('/', function(req,res){
-  res.send('POST message');
-});
+router.get('/', controller.getAll);
+router.post('/', controller.create);
 
 module.exports = router;
