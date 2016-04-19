@@ -1,0 +1,28 @@
+html {
+  font-size: 10px; }
+
+.gallery {
+  display: flex; }
+
+.poster {
+  margin: 10px;
+  height: 300px;
+  width: 200px;
+  background-color: #363636;
+  font-family: font-modern;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.poster__title {
+  color: #C20F29;
+  text-transform: uppercase; }
+
+.poster__subtitle {
+  color: dimgray;
+  text-transform: uppercase; }
+
+.poster--light {
+  background: #CCC; }
+
+/*# sourceMappingURL=style.css.map */

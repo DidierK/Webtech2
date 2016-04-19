@@ -1,0 +1,30 @@
+.gallery{
+  display: flex;
+}
+
+.poster{
+  margin: 10px;
+  height: 300px;
+  width: 200px;
+  background-color: $mine-shaft;
+  font-family: font-modern;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poster__title{
+  //@include rem(2);
+  color: $shiraz;
+  text-transform: uppercase;
+}
+
+.poster__subtitle{
+//  @include rem(1);
+  color: lighten($mine-shaft, 20%);
+  text-transform: uppercase;
+}
+
+.poster--light{
+  background: #CCC;
+}
