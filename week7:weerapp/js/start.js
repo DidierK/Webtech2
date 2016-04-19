@@ -46,35 +46,35 @@
                         skycons.play();
 
                         if (data.currently.icon == "clear-day"){
-                          document.body.style.background = "url('./images/clear_sky_by_lfcjake.png') center";
+                          $(".weather").css("background-image", "url('./images/clear_sky_by_lfcjake.png')");
                         }
 
                         if (data.currently.icon == "clear-night"){
-                          document.body.style.background = "url('./images/472297.jpg') center";
+                          $(".weather").css("background-image", "url('./images/472297.jpg')");
                         }
 
-                        if (data.currently.icon == "partly_cloudy_day"){
-                          document.body.style.background = "url('./images/cloud_night.jpg') center";
+                        if (data.currently.icon == "partly-cloudy-day"){
+                          $(".weather").css("background-image", "url('./images/sky_014.jpg')");
                         }
 
                         if (data.currently.icon == "partly-cloudy_night"){
-                          document.body.style.background = "url('./images/472297.jpg') center";
+                          $(".weather").css("background-image", "url('./images/cloudy_night.jpg')");
                         }
 
                         if (data.currently.icon == "cloudy"){
-                          document.body.style.background = "url('./images/DSC076771.jpg') center";
+                          $(".weather").css("background-image", "url('./images/DSC076771.jpg')");
                         }
 
                         if (data.currently.icon == "rain"){
-                          document.body.style.background = "url('./images/rain.jpg') center";
+                          $(".weather").css("background-image", "url('./images/rain.jpg')");
                         }
 
                         if (data.currently.icon == "sleet"){
-                          document.body.style.background = "url('./images/Sleet.jpg') center";
+                          $(".weather").css("background-image", "url('./images/Sleet.jpg')");
                         }
 
                         if (data.currently.icon == "snow"){
-                          document.body.style.background = "url('./images/snow.jpg') center";
+                          $(".weather").css("background-image", "url('./images/snow.jpg')");
                         }
 
                         // Current temperature
@@ -82,6 +82,21 @@
                         var Cel = ((Far - 32) * 5) / 9;
                         var n = Cel.toFixed(1);
                         $(".weather-temp").text(n + " °");
+
+                        //tomorrow summary
+                        var TomorrowSummary = data.daily.data[1].summary;
+                        $(".tomorrow-summary").text(TomorrowSummary);
+
+                        // tomorrow temperature
+                        var Tfar = data.daily.data[1].apparentTemperatureMax;
+                        var Tcel = ((Tfar - 32) * 5) / 9;
+                        var Tn = Tcel.toFixed(1);
+                        $(".tomorrow-temp").text(Tn + " °");
+
+                        //tomorrow skycon
+                        var Tskycons = new Skycons({"color": "white"});
+                        Tskycons.add("tomorrow-icon", data.daily.data[1].icon);
+                        Tskycons.play();
                 }
             });
 
